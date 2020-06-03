@@ -15,7 +15,10 @@ populateUFs()
 function getCities(event){
     const citySelect = document.querySelector("select[name=city]")
     const stateInput = document.querySelector("input[name=state]");
-    citySelect.innerHTML = ''
+
+    citySelect.innerHTML = '<option value>Selecione a cidade</option>';
+    citySelect.disabled = true;
+
 
     const ufValue = event.target.value
 
@@ -38,3 +41,47 @@ function getCities(event){
 document
     .querySelector("select[name=uf]")
     .addEventListener("change", getCities)
+
+// itens de coleta
+
+const itensColeta = document.querySelectorAll(".items-grid li")
+let itensSelecionados = []
+const itemColetado = document.querySelector('input[name=items')
+
+
+for(const item of itensColeta){
+    item.addEventListener("click", mudarItemSelecionado)
+}
+
+function mudarItemSelecionado(event){
+    const itemLi = event.target
+    //adiciona ou remove uma classe com js
+    itemLi.classList.toggle("selected")
+
+    const itemId = itemLi.dataset.id
+
+    //vereficar se axistem itens selecionados
+    //pegar os itens selecionados
+
+    const jaSelecionados = itensSelecionados.findIndex((item) => {
+        const itemEncontrado = item == itemId //será true ou false
+        return itemEncontrado
+    })
+
+    //se já estiver selecionado, tirar da seleção.
+    if(jaSelecionados >= 0){
+        //tirar da selecao
+        const itensFiltrados = itensSelecionados.filter(item =>{
+            const itemDiferente = item != itemId;
+            return itemDiferente
+        })
+        itensSelecionados = itensFiltrados
+    }else{
+        //se não estiver selecionado, adicionar a selação.
+        itensSelecionados.push(itemId)
+    }
+    console.log(itensSelecionados)
+    
+    //atualizar o campo escondido com os itens selecioandos.
+    itemColetado.value = itensSelecionados
+}

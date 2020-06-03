@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Roboto:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Style/main.css">
         <link rel="stylesheet" href="Style/home.css">
+        <link rel="stylesheet" href="Style/modal.css">
         <link rel="stylesheet" href="Style/responsive.css">
     </head>
     <body>
@@ -14,7 +15,7 @@
             <div class="content">
                 <header>
                     <img src="Assets/icones/logo.svg" alt="Logomarca">
-                    <a href="http://google.com.br"><span></span>Cadastre um ponto de coleta</a>
+                    <a href="create-point.html"><span></span>Cadastre um ponto de coleta</a>
                 </header>
                 <main>
                     <h1>Seu marketplace de coleta de resíduos</h1>
@@ -24,5 +25,23 @@
                 </main>
             </div>
         </div>
+        <div id="modal" class="hide">
+            <div class="content">
+                <div class="header">
+                    <h1>Pontos de Coleta</h1>
+                    <a href="#">Fechar</a>
+                </div>
+                <form action="search-results.html">
+                    <label for="search">Cidade</label>
+                    <div class="search field">
+                        <input type="text" name="search" placeholder="Pesquise por cidade">
+                        <button>
+                            <img src="Assets/icones/search.svg" alt="Buscar">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="Scripts/index.js"></script>
     </body>
 </html>
