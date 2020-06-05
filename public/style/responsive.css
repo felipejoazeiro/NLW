@@ -2,17 +2,19 @@
     #page-home{
         background-position-x: 70vw;
     }
-    #page-home .content{
+    #page-home .content
+    {
         align-items: center;
         text-align: center;
     }
-    #page-home header a {
+    #page-home header a{
         position: absolute;
         bottom: 48px;
         left: 50%;
         transform: translateX(-50%);
     }
-    #page-home main{
+    #page-home main,
+    #page-create-point main{
         align-items: center;
     }
     #page-search-results .cards{
@@ -20,6 +22,12 @@
     }
     #page-search-results .cards img{
         height: 250px;
+    }
+    #page-create-point .field-group{
+        flex-direction: column;
+    }
+    #page-create-point .field-group .field + .field{
+        margin-left: 0;
     }
 }
 
