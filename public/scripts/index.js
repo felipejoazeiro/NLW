@@ -9,3 +9,5 @@ buttonSearch.addEventListener('click', () => {
 close.addEventListener('click', () => {
     modal.classList.add("hide")
 })
+
+const buttonCadastro = document.querySelector(".cadastro")
